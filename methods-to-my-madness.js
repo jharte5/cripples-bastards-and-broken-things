@@ -9,25 +9,25 @@ function slice(string, start = 0, end = string.length) {
 }
 
 function repeat(str, repetitions) {
-  let repeated = '';
+  let newStr = '';
   
-  let count = 1;
-  while (count <= repetitions) {
-    repeated + str;
-    count++;
+  for (let i = 0; i < repetitions; i++) {
+    newStr = newStr + str;
   }
-  
-  return repeated;
+
+  return newStr
 }
 
 function startsWith(string, substring) {
-  for (let i = 0; i < string.length; i++) {
-    if (string[i] !== substring[i]) {
-      return false;
+  
+  for (let i = 0; i < substring.length; i++) {
+    
+    if(string[i] !== substring[i]) {
+      return false
     }
   }
-
-  return true;
+  return true
+  
 }
 
 function endsWith(str) {
