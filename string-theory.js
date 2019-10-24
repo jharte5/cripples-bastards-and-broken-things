@@ -2,50 +2,51 @@ function crazyCase(str) {
   let crazyCased = '';
 
   for (let i = 0; i < str.length; i++) {
-    if (i % 2 === 0) {
-      crazyCased = str[i].toLowerCase()
+
+    if (i % 2 === 1) {
+      crazyCased += str[i].toUpperCase()
     } else {
-      crazyCased = str[i].toUpperCase()
+      crazyCased += str[i].toLowerCase()
     }
   }
 
   return crazyCased;
 }
 
-function ciEmailify(name) {
-  let email = '';
-  for (let i = 0; i < name.length; i--) {
-    if (name[i] === ' ') {
-      email = email + '.';
+function ciEmailify(str) {
+  let newStr= ''
+str = str.toLowerCase()
+for (i=0; i<str.length; i++) {
+ if (str[i] === " ") {
+ newStr = newStr + '.'
+ } else {
+ newStr = newStr + str[i]
+ }
+ }
+ return newStr + '@codeimmersives.com'
+}
+
+function exclaim(str) {
+  let newStr= ''
+  for (i = 0; i < str.length;i++) {
+    if (str[i] === '?') {
+    newStr = newStr + '!'
+    } else if(str[i] === '.') {
+    newStr = newStr + '!'
     } else {
-      email = email + name[i].toLowerCase();
+    newStr = newStr + str[i]
     }
   }
-
-  return email + '@codeimmersives.com';
+    return newStr;
 }
 
-function exclaim(sentence) {
-  let exclaimed = '';
-
-  for (let i = 0; i < sentence.length; i++) {
-    const character = sentence[i];
-    if (character === '?' || character === '.') {
-      exclaimed = exclaimed + '!';
+function reverse(str) {newStr =""
+  for (i = 1; i <= str.length; i++){
+    if(str[i] !== ' ' ){
+    newStr =  newStr +  str[str.length - i]
     }
   }
-
-  return exclaimed;
-}
-
-function reverse(str) {
-  let reversed = '';
-
-  for (let i = str.length; i >= 0; i--) {
-    reversed = reversed + str[i];
-  }
-
-  return reversed;
+    return newStr;
 }
 
 function crazyCase2ReturnOfCrazyCase(str) {
@@ -70,18 +71,19 @@ function crazyCase2ReturnOfCrazyCase(str) {
 }
 
 function titleCase(str) {
-  let title = '';
-
-  for (let i = 0; i < str.length; i++) {
-    const character = str[i].toLowerCase();
-    if (str[i - 1] === ' ') {
-      title = title + character.toUpperCase();
-    } else {
-      title = title + character;
-    }
-  }
-
-  return title;
+  let newStr= ''
+  for (i = 0; i <str.length; i++){
+   if(i === 0){
+     newStr = newStr + str[0].toUpperCase()
+   } else{
+   if (str[i - 1] === ' ') {
+   newStr = newStr + str[i].toUpperCase()}
+   else {
+   newStr = newStr + str[i].toLowerCase()
+     }
+     }
+   }
+     return newStr;
 }
 
 function onlyVowels(str) {
