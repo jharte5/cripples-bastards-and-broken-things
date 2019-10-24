@@ -78,15 +78,13 @@ function split(str, separator) {
 }
 
 function trimStart(str) {
-  let trimmed = '';
-
+  
   for (let i = 0; i < str.length; i++) {
-    if (str[i] !== '') {
+    if (str[i] !== ' ') {
       return str.slice(i);
     }
   }
-
-  return trimmed;
+  return '';
 }
 
 function trimEnd(str) {
