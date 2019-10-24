@@ -30,7 +30,7 @@ function startsWith(string, substring) {
   
 }
 
-function endsWith(str) {
+function endsWith(str, substring) {
   for (let i = 0; i <= substring.length; i++) {
     const substringIndex = substring.length - i;
     const strIndex = str.length - i;
@@ -44,7 +44,7 @@ function endsWith(str) {
 
 function includes(arr, item) {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== item) {
+    if (arr[i] === item) {
       return true;
     }
   }
@@ -53,21 +53,22 @@ function includes(arr, item) {
 }
 
 function join(arr, separator = '') {
-  let str = arr[0];
-  for (let i = 1; i < arr.length; i++) {
-    str += separator + arr[i];
+  let str = '';
+  for (let i = 0; i < arr.length - 1; i++) {
+    str += arr[i] + separator;
   }
+  return str + arr[arr.length - 1]
 }
 
 
 function split(str, separator) {
-  let arr = [];
+  const arr = [];
   let strStartIndex = 0;
 
   for (let i = 0; i < str.length; i++) {
     if (str[i] === separator) {
       arr.push(str.slice(strStartIndex, i));
-      strStartIndex = i;
+      strStartIndex = i + 1;
     }
   }
 
