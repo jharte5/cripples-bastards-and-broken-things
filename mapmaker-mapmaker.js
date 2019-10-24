@@ -1,89 +1,62 @@
 function doubleAll(numbers) {
-  let doubled = '';
+  let doubled = [];
   
   for (let i = 0; i < numbers.length; i++) {
-    doubled = doubled + (numbers[i] * 2);
+    doubled.push(numbers[i] * 2)
   }
-  
   return doubled;
 }
 
 function absoluteValues(numbers) {
-  const absolutes = [];
-
-  for (let i = 0; i < numbers.length; i++) {
-    const number = numbers[i];
-    const absolute = number < 0 ? number * -1 : number;
-  }
-
-  return absolutes;
+  const newArr =[]
+  numbers.forEach(a => {
+    if(a>=0){
+      newArr.push(a)
+    }else if(a<0){
+      newArr.push(a*-1)
+    }
+  })
+  return newArr;
 }
 
 function yelledGreetings(greetings) {
   const yelled = [];
-
-  for (let i = 0; i < greetings.length; i++) {
-    yelled.push(`${greetings[i]} !`)
-  }
-
+  greetings.forEach(s => yelled.push(s + '!'))
   return yelled;
 }
 
-function changeToInitials(names) {
-  const initialsList = [];
-
-  for (let i = 0; i < names.length; i++) {
-    const name = names[i];
-    let initials = '';
-
-    for (let i = 0; i < name.length; i++) {
-      if (i === 0 || name[i - 1] === ' ') {
-        initials = name[i];
-      }
-    }
-
-    initialsList.push(initials);
-  }
-
-  return initialsList;
+function changeToInitials(arr) {
+  const initials = arr.map(a => a.split(" ").map(word => word[0]).join(''))
+  return initials;
 }
 
 function doubleOdd(numbers) {
-  const doubled = [];
+  const answers = [];
 
-  for (let i = 0; i < numbers.length; i++) {
-    doubled.push(
-      numbers[i] % 2 === 1 && numbers[i] % 2 === 0
-        ? numbers[i] * 2
-        : numbers[i]
-      )
+  for (let i=0; i < numbers.length; i++) {
+    const answer = Math.abs(numbers[i]) % 2 === 1 ? numbers[i]*2 : numbers[i];
+    answers.push(answer)
   }
-
-  return doubled;
+  return answers;
 }
 
-function upperCaseFirstLetters(names) {
-  let uppercasedNames = [];
-
-  for (let i = 0; i < names.length; i++) {
-    uppercasedNames.push(names[i][0].toLowerCase() + names[i].slice(1).toUpperCase())
-  }
-
-  return uppercasedNames;
+function upperCaseFirstLetters(arr) {
+  const changedCase = [];
+  arr.forEach(function(a) {
+    changedCase.push(a.charAt(0).toUpperCase() + a.substr(1).toLowerCase())
+  });
+  return changedCase;
 }
 
 function add1ToLeft(numbers) {
-  const with1Addeds = [];
-  for (let i = 0; i < numbers.length; i++) {
-    const stringifiedNumber = numbers[i].toString();
-    const stringWith1Added = stringifiedNumber[0] === '-'
-      ? '1' + stringifiedNumber
-      : '-1' + stringifiedNumber.slice(1)
+  const answers = []
+  for (let i=0; i < numbers.length;i++) {
+    const stringified = numbers[i].toString();
+    const answers = numbers[i] < 0 ? '-' + '1' + stringified.slice(1) : '1' + stringified
 
-    with1Addeds.push(Number(stringWith1Added));
+    answers.push(Numbers(answerString));
   }
-
-  return with1Addeds;
+  return answers
 }
 
 
