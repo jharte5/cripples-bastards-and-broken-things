@@ -87,16 +87,13 @@ function titleCase(str) {
 }
 
 function onlyVowels(str) {
-  const listOfVowels = 'aeiouAEIOU';
-  let vowels = '';
-  for (let i = 0; i < str.length; i++) {
-    const character = str[i];
-    if (listOfVowels.includes(character)) {
-      vowels = vowels + character;
-    }
+  let newStr= ''
+  for (i=0;i<str.length;i++){
+    if('aeiou'.includes(str[i]) || 'AEIOU'.includes(str[i])) {
+      newStr = newStr + str[i]
   }
-
-  return listOfVowels;
+ }
+  return newStr;
 }
 
 function crazyCase3SonOfCrazyCase(str) {
